@@ -9,38 +9,279 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TerminalRouteImport } from './routes/terminal'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as LinuxRouteImport } from './routes/linux'
+import { Route as GlossaryRouteImport } from './routes/glossary'
+import { Route as ChallengesRouteImport } from './routes/challenges'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ToolsIndexRouteImport } from './routes/tools.index'
+import { Route as PhasesIndexRouteImport } from './routes/phases.index'
+import { Route as LabsIndexRouteImport } from './routes/labs.index'
+import { Route as CheatsheetsIndexRouteImport } from './routes/cheatsheets.index'
+import { Route as ToolsSlugRouteImport } from './routes/tools.$slug'
+import { Route as PhasesSlugRouteImport } from './routes/phases.$slug'
+import { Route as LabsSlugRouteImport } from './routes/labs.$slug'
+import { Route as CheatsheetsSlugRouteImport } from './routes/cheatsheets.$slug'
+import { Route as ApiChatRouteImport } from './routes/api.chat'
 
+const TerminalRoute = TerminalRouteImport.update({
+  id: '/terminal',
+  path: '/terminal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LinuxRoute = LinuxRouteImport.update({
+  id: '/linux',
+  path: '/linux',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlossaryRoute = GlossaryRouteImport.update({
+  id: '/glossary',
+  path: '/glossary',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChallengesRoute = ChallengesRouteImport.update({
+  id: '/challenges',
+  path: '/challenges',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ToolsIndexRoute = ToolsIndexRouteImport.update({
+  id: '/tools/',
+  path: '/tools/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhasesIndexRoute = PhasesIndexRouteImport.update({
+  id: '/phases/',
+  path: '/phases/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabsIndexRoute = LabsIndexRouteImport.update({
+  id: '/labs/',
+  path: '/labs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheatsheetsIndexRoute = CheatsheetsIndexRouteImport.update({
+  id: '/cheatsheets/',
+  path: '/cheatsheets/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsSlugRoute = ToolsSlugRouteImport.update({
+  id: '/tools/$slug',
+  path: '/tools/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhasesSlugRoute = PhasesSlugRouteImport.update({
+  id: '/phases/$slug',
+  path: '/phases/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LabsSlugRoute = LabsSlugRouteImport.update({
+  id: '/labs/$slug',
+  path: '/labs/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheatsheetsSlugRoute = CheatsheetsSlugRouteImport.update({
+  id: '/cheatsheets/$slug',
+  path: '/cheatsheets/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/challenges': typeof ChallengesRoute
+  '/glossary': typeof GlossaryRoute
+  '/linux': typeof LinuxRoute
+  '/resources': typeof ResourcesRoute
+  '/terminal': typeof TerminalRoute
+  '/api/chat': typeof ApiChatRoute
+  '/cheatsheets/$slug': typeof CheatsheetsSlugRoute
+  '/labs/$slug': typeof LabsSlugRoute
+  '/phases/$slug': typeof PhasesSlugRoute
+  '/tools/$slug': typeof ToolsSlugRoute
+  '/cheatsheets/': typeof CheatsheetsIndexRoute
+  '/labs/': typeof LabsIndexRoute
+  '/phases/': typeof PhasesIndexRoute
+  '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/challenges': typeof ChallengesRoute
+  '/glossary': typeof GlossaryRoute
+  '/linux': typeof LinuxRoute
+  '/resources': typeof ResourcesRoute
+  '/terminal': typeof TerminalRoute
+  '/api/chat': typeof ApiChatRoute
+  '/cheatsheets/$slug': typeof CheatsheetsSlugRoute
+  '/labs/$slug': typeof LabsSlugRoute
+  '/phases/$slug': typeof PhasesSlugRoute
+  '/tools/$slug': typeof ToolsSlugRoute
+  '/cheatsheets': typeof CheatsheetsIndexRoute
+  '/labs': typeof LabsIndexRoute
+  '/phases': typeof PhasesIndexRoute
+  '/tools': typeof ToolsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/challenges': typeof ChallengesRoute
+  '/glossary': typeof GlossaryRoute
+  '/linux': typeof LinuxRoute
+  '/resources': typeof ResourcesRoute
+  '/terminal': typeof TerminalRoute
+  '/api/chat': typeof ApiChatRoute
+  '/cheatsheets/$slug': typeof CheatsheetsSlugRoute
+  '/labs/$slug': typeof LabsSlugRoute
+  '/phases/$slug': typeof PhasesSlugRoute
+  '/tools/$slug': typeof ToolsSlugRoute
+  '/cheatsheets/': typeof CheatsheetsIndexRoute
+  '/labs/': typeof LabsIndexRoute
+  '/phases/': typeof PhasesIndexRoute
+  '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/challenges'
+    | '/glossary'
+    | '/linux'
+    | '/resources'
+    | '/terminal'
+    | '/api/chat'
+    | '/cheatsheets/$slug'
+    | '/labs/$slug'
+    | '/phases/$slug'
+    | '/tools/$slug'
+    | '/cheatsheets/'
+    | '/labs/'
+    | '/phases/'
+    | '/tools/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/challenges'
+    | '/glossary'
+    | '/linux'
+    | '/resources'
+    | '/terminal'
+    | '/api/chat'
+    | '/cheatsheets/$slug'
+    | '/labs/$slug'
+    | '/phases/$slug'
+    | '/tools/$slug'
+    | '/cheatsheets'
+    | '/labs'
+    | '/phases'
+    | '/tools'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/challenges'
+    | '/glossary'
+    | '/linux'
+    | '/resources'
+    | '/terminal'
+    | '/api/chat'
+    | '/cheatsheets/$slug'
+    | '/labs/$slug'
+    | '/phases/$slug'
+    | '/tools/$slug'
+    | '/cheatsheets/'
+    | '/labs/'
+    | '/phases/'
+    | '/tools/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ChallengesRoute: typeof ChallengesRoute
+  GlossaryRoute: typeof GlossaryRoute
+  LinuxRoute: typeof LinuxRoute
+  ResourcesRoute: typeof ResourcesRoute
+  TerminalRoute: typeof TerminalRoute
+  ApiChatRoute: typeof ApiChatRoute
+  CheatsheetsSlugRoute: typeof CheatsheetsSlugRoute
+  LabsSlugRoute: typeof LabsSlugRoute
+  PhasesSlugRoute: typeof PhasesSlugRoute
+  ToolsSlugRoute: typeof ToolsSlugRoute
+  CheatsheetsIndexRoute: typeof CheatsheetsIndexRoute
+  LabsIndexRoute: typeof LabsIndexRoute
+  PhasesIndexRoute: typeof PhasesIndexRoute
+  ToolsIndexRoute: typeof ToolsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terminal': {
+      id: '/terminal'
+      path: '/terminal'
+      fullPath: '/terminal'
+      preLoaderRoute: typeof TerminalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/linux': {
+      id: '/linux'
+      path: '/linux'
+      fullPath: '/linux'
+      preLoaderRoute: typeof LinuxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glossary': {
+      id: '/glossary'
+      path: '/glossary'
+      fullPath: '/glossary'
+      preLoaderRoute: typeof GlossaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/challenges': {
+      id: '/challenges'
+      path: '/challenges'
+      fullPath: '/challenges'
+      preLoaderRoute: typeof ChallengesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,22 +289,90 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tools/': {
+      id: '/tools/'
+      path: '/tools'
+      fullPath: '/tools/'
+      preLoaderRoute: typeof ToolsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/phases/': {
+      id: '/phases/'
+      path: '/phases'
+      fullPath: '/phases/'
+      preLoaderRoute: typeof PhasesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/labs/': {
+      id: '/labs/'
+      path: '/labs'
+      fullPath: '/labs/'
+      preLoaderRoute: typeof LabsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cheatsheets/': {
+      id: '/cheatsheets/'
+      path: '/cheatsheets'
+      fullPath: '/cheatsheets/'
+      preLoaderRoute: typeof CheatsheetsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/$slug': {
+      id: '/tools/$slug'
+      path: '/tools/$slug'
+      fullPath: '/tools/$slug'
+      preLoaderRoute: typeof ToolsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/phases/$slug': {
+      id: '/phases/$slug'
+      path: '/phases/$slug'
+      fullPath: '/phases/$slug'
+      preLoaderRoute: typeof PhasesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/labs/$slug': {
+      id: '/labs/$slug'
+      path: '/labs/$slug'
+      fullPath: '/labs/$slug'
+      preLoaderRoute: typeof LabsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cheatsheets/$slug': {
+      id: '/cheatsheets/$slug'
+      path: '/cheatsheets/$slug'
+      fullPath: '/cheatsheets/$slug'
+      preLoaderRoute: typeof CheatsheetsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ChallengesRoute: ChallengesRoute,
+  GlossaryRoute: GlossaryRoute,
+  LinuxRoute: LinuxRoute,
+  ResourcesRoute: ResourcesRoute,
+  TerminalRoute: TerminalRoute,
+  ApiChatRoute: ApiChatRoute,
+  CheatsheetsSlugRoute: CheatsheetsSlugRoute,
+  LabsSlugRoute: LabsSlugRoute,
+  PhasesSlugRoute: PhasesSlugRoute,
+  ToolsSlugRoute: ToolsSlugRoute,
+  CheatsheetsIndexRoute: CheatsheetsIndexRoute,
+  LabsIndexRoute: LabsIndexRoute,
+  PhasesIndexRoute: PhasesIndexRoute,
+  ToolsIndexRoute: ToolsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
