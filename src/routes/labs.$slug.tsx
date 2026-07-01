@@ -31,12 +31,12 @@ function LabPage() {
 
       <h2 className="mt-8 mb-2 font-display text-xl font-semibold">Requirements</h2>
       <ul className="ml-5 list-disc text-sm text-muted-foreground">
-        {lab.requirements.map((r) => <li key={r}>{r}</li>)}
+        {lab.requirements.map((r: string) => <li key={r}>{r}</li>)}
       </ul>
 
       <h2 className="mt-8 mb-2 font-display text-xl font-semibold">Steps</h2>
       <ol className="space-y-4">
-        {lab.steps.map((s, i) => (
+        {lab.steps.map((s: { instruction: string; command?: string; expected?: string }, i: number) => (
           <li key={i} className="rounded-lg border border-border bg-panel p-4">
             <div className="flex gap-3">
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">{i + 1}</span>
@@ -53,7 +53,7 @@ function LabPage() {
       <Callout type="tip" title="AI hints">
         Ask the AI Assistant (bottom right) any of these prompts if you get stuck:
         <ul className="mt-2 list-disc pl-5 text-xs">
-          {lab.aiPrompts.map((p) => <li key={p}>{p}</li>)}
+          {lab.aiPrompts.map((p: string) => <li key={p}>{p}</li>)}
         </ul>
       </Callout>
 
