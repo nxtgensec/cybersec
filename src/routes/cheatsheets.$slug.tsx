@@ -21,7 +21,7 @@ function CheatsheetPage() {
       <h1 className="font-display text-3xl font-bold">{item.title} Cheatsheet</h1>
       <CodeBlock
         lang="bash"
-        code={item.cheatsheet.map((c) => `# ${c.desc}\n${c.cmd}`).join("\n\n")}
+        code={item.cheatsheet.map((c: { desc: string; cmd: string }) => `# ${c.desc}\n${c.cmd}`).join("\n\n")}
       />
     </div>
   );
