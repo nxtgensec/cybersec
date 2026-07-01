@@ -11,7 +11,7 @@ export const phaseEnumeration: LearningTopic = {
   next: { slug: "vulnerability-assessment", title: "Vulnerability Assessment", kind: "phase" },
   overview: `Enumeration goes one layer deeper than scanning. Once you know a service is running, enumeration tells you *what's inside it*: users, shares, versions, endpoints, DNS records, mailboxes, misconfigurations.`,
   whyItMatters: `Most successful attacks begin with a good enumeration finding — a null-session SMB share, a verbose SNMP community, an anonymous LDAP bind, a wide-open FTP listing. Enumeration turns "port 445 is open" into "port 445 lets me list domain users."`,
-  realWorldScenario: `Port scan found SMB on 445 and SNMP on 161. Enumeration reveals SNMP is using the default community "public" and dumps 400 usernames, network interfaces, and running processes. SMB accepts anonymous sessions and exposes a share called `Backups` containing an unencrypted `sql.bak`.`,
+  realWorldScenario: `Port scan found SMB on 445 and SNMP on 161. Enumeration reveals SNMP is using the default community "public" and dumps 400 usernames, network interfaces, and running processes. SMB accepts anonymous sessions and exposes a share called "Backups" containing an unencrypted sql.bak.`,
   objectives: [
     "Enumerate common protocols: SMB, SNMP, LDAP, NFS, DNS, SMTP, RPC, FTP, SSH, HTTP",
     "Identify usernames, groups, shares, and misconfigurations",
