@@ -1,5 +1,19 @@
-@import "tailwindcss" source(none);
-@source "../src";
+@import "tailwindcss" source("./");
+@source inline("absolute relative fixed sticky block inline inline-block inline-flex flex grid hidden table shrink-0 grow min-w-0 overflow-hidden overflow-auto overflow-x-auto overflow-y-auto scroll-mt-20 whitespace-nowrap whitespace-pre-wrap break-words antialiased underline uppercase italic tabular-nums select-none pointer-events-none cursor-pointer cursor-default transition transition-all transition-colors transition-opacity transition-transform backdrop-blur-md");
+@source inline("{sm:,md:,lg:,xl:}{block,flex,grid,hidden,inline,inline-flex}");
+@source inline("{flex,grid}-{1,col,wrap,row} flex-col flex-row flex-wrap items-{start,end,center,stretch,baseline} justify-{center,between,end} place-content-center gap-{1,1.5,2,3,4,6,8,10} space-y-{1,1.5,2,3,4,6,20} space-x-{1,2}");
+@source inline("{m,p}{t,b,l,r,x,y,}-{0,0.5,1,1.5,2,2.5,3,3.5,4,5,6,8,10,12,16,20,24,28} m-auto ml-auto mt-auto mx-auto p-[1px]");
+@source inline("{h,w}-{0,1,1.5,2,2.5,3,3.5,4,5,6,7,8,9,10,12,14,64,72,96,full,auto,px,svh} size-4 aspect-square aspect-video min-h-{0,12,screen,svh} min-h-[60vh] min-h-[60px] max-h-[300px] max-h-[calc(100vh-6rem)] h-[1px] h-[560px] h-[70vh] lg:h-[70vh]");
+@source inline("w-[1px] w-[100px] w-[400px] w-(--sidebar-width) w-0 min-w-0 min-w-5 min-w-[8rem] min-w-[12rem] max-w-{md,lg,2xl,3xl,4xl,5xl,6xl,max} max-w-[1600px] max-w-[calc(100vw-2rem)]");
+@source inline("grid-cols-[280px_minmax(0,1fr)] xl:grid-cols-[300px_minmax(0,820px)_260px] xl:grid-cols-[300px_minmax(0,880px)_240px] md:grid-cols-2 md:grid-cols-4 lg:grid-cols-3 lg:grid-cols-4 lg:grid-cols-[280px_minmax(0,1fr)]");
+@source inline("top-{0,1.5,3,3.5,4,20,full} right-{0,1,2,3,4,6} bottom-{0,6,24} left-{0,1/2,2,3} inset-0 inset-x-0 inset-y-0 z-{10,20,30,40,50} -top-12 -top-24 -right-12 -right-24 -bottom-12 -left-12 -mt-4 -mt-8 -ml-4 -mx-1 -translate-x-1/2 -translate-y-1/2 translate-x-[-50%] translate-y-[-50%]");
+@source inline("rounded rounded-{sm,md,lg,xl,2xl,full} rounded-[2px] rounded-[inherit] border border-{2,b,t,r,l,y,transparent,input,border,border-strong,primary,primary/20,primary/30,primary/40,primary/50,primary/60,danger/60,warning/40} border-l-2 border-l-4 border-dashed");
+@source inline("bg-{background,background/80,panel,panel/50,card,muted,muted/40,muted/50,popover,primary,primary/5,primary/10,primary/15,primary/20,primary/70,terminal,transparent,black/80,danger/10,danger/70,warning/5,warning/70,sidebar,sidebar-border} hover:bg-{card,muted,muted/40,muted/50,primary/10,sidebar-accent}");
+@source inline("text-{left,center,right,xs,sm,base,lg,xl,2xl,3xl,4xl,5xl,7xl,foreground,foreground/70,muted-foreground,primary,primary/20,primary/60,primary-foreground,card-foreground,popover-foreground,terminal-foreground,danger,destructive,sidebar-foreground,sidebar-foreground/70} hover:text-{foreground,primary,sidebar-accent-foreground} font-{display,mono,normal,medium,semibold,bold} leading-{none,tight,6,8,relaxed} tracking-{tight,widest}");
+@source inline("opacity-{0,30,40,50,60,70,100} hover:opacity-100 shadow shadow-{none,sm,md,lg,xl,2xl} ring-{0,1} ring-{ring,sidebar-ring} outline-none focus:outline-none focus-visible:outline-none focus:ring-1 focus:ring-2 focus-visible:ring-1 focus-visible:ring-2 focus-visible:ring-ring");
+@source inline("list-{none,disc,decimal} first:border-0 first:pt-0 first:rounded-l-md last:rounded-r-md disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed aria-disabled:pointer-events-none aria-disabled:opacity-50");
+@source inline("hover:border-{primary,primary/30,primary/50} hover:scale-105 hover:scale-[1.02] hover:underline active:bg-sidebar-accent active:text-sidebar-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground");
+@source inline("prose-cyber grid-bg scan-lines glow-primary text-glow caret-blink sr-only group peer");
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
